@@ -38,31 +38,26 @@ import ../make-test-python.nix (
       homeserver = { pkgs, ... }: {
         services.matrix-synapse = {
           enable = true;
-          settings = {
-            database.name = "sqlite3";
-            tls_certificate_path = "${cert}";
-            tls_private_key_path = "${key}";
-            enable_registration = true;
-            registration_shared_secret = "supersecret-registration";
+          database_type = "sqlite3";
+          tls_certificate_path = "${cert}";
+          tls_private_key_path = "${key}";
+          enable_registration = true;
+          registration_shared_secret = "supersecret-registration";
 
-            listeners = [ {
-              # The default but tls=false
-              bind_addresses = [
-                "0.0.0.0"
+          listeners = [
+            # The default but tls=false
+            {
+              "bind_address" = "";
+              "port" = 8448;
+              "resources" = [
+                { "compress" = true; "names" = [ "client" "webclient" ]; }
+                { "compress" = false; "names" = [ "federation" ]; }
               ];
-              port = 8448;
-              resources = [ {
-                compress = true;
-                names = [ "client" ];
-              } {
-                compress = false;
-                names = [ "federation" ];
-              } ];
-              tls = false;
-              type = "http";
-              x_forwarded = false;
-            } ];
-          };
+              "tls" = false;
+              "type" = "http";
+              "x_forwarded" = false;
+            }
+          ];
         };
 
         networking.firewall.allowedTCPPorts = [ 8448 ];

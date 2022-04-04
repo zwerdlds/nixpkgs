@@ -186,8 +186,8 @@ stdenv.mkDerivation (rec {
 
   src = fetchgit {
     url = "https://gitlab.haskell.org/ghc/ghc.git/";
-    rev = "cc635da167fdec2dead0603b0026cb841f0aa645";
-    sha256 = "1lj76l546zriwkcn2r7i5a4j35bx9fh5iggwfz2xvhh8aq8j2i46";
+    rev = "d85c7dcb7c457efc23b20ac8f4e4ae88bae5b050";
+    sha256 = "sha256-Ez8P2G/mYG45wajk2QnObmrJsiHOuC6qhCT76R/RhYE=";
   };
 
   enableParallelBuilding = true;

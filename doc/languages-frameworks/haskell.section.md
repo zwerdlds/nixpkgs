@@ -72,8 +72,8 @@ $ nix-env -f "<nixpkgs>" -qaP -A haskell.compiler
 haskell.compiler.ghc8107                 ghc-8.10.7
 haskell.compiler.ghc884                  ghc-8.8.4
 haskell.compiler.ghc902                  ghc-9.0.2
-haskell.compiler.ghc921                  ghc-9.2.1
-haskell.compiler.ghcHEAD                 ghc-9.3.20211111
+haskell.compiler.ghc922                  ghc-9.2.2
+haskell.compiler.ghcHEAD                 ghc-9.3.20220406
 haskell.compiler.ghc8102Binary           ghc-binary-8.10.2
 haskell.compiler.ghc8102BinaryMinimal    ghc-binary-8.10.2
 haskell.compiler.ghc8107Binary           ghc-binary-8.10.7
@@ -82,27 +82,28 @@ haskell.compiler.ghc865Binary            ghc-binary-8.6.5
 haskell.compiler.integer-simple.ghc8107  ghc-integer-simple-8.10.7
 haskell.compiler.integer-simple.ghc884   ghc-integer-simple-8.8.4
 haskell.compiler.native-bignum.ghc902    ghc-native-bignum-9.0.2
-haskell.compiler.native-bignum.ghc921    ghc-native-bignum-9.2.1
-haskell.compiler.native-bignum.ghcHEAD   ghc-native-bignum-9.3.20211111
+haskell.compiler.native-bignum.ghc922    ghc-native-bignum-9.2.2
+haskell.compiler.native-bignum.ghcHEAD   ghc-native-bignum-9.3.20220406
 haskell.compiler.ghcjs                   ghcjs-8.10.7
 ```
 
 Every of those compilers has a corresponding attribute set built completely
 using it. However, the non-standard package sets are not tested regularly and
 have less working packages as a result. The corresponding package set for GHC
-9.0.1 is `haskell.packages.ghc901` (in fact `haskellPackages` is just an alias
-for `haskell.packages.ghc8104`):
+9.2.2 is `haskell.packages.ghc922` (in fact `haskellPackages` is just an alias
+for `haskell.packages.ghc902`):
 
 ```console
-$ nix-env -f "<nixpkgs>" -qaP -A haskell.packages.ghc901
-haskell.packages.ghc901.a50                                                         a50-0.5
-haskell.packages.ghc901.AAI                                                         AAI-0.2.0.1
-haskell.packages.ghc901.abacate                                                     abacate-0.0.0.0
-haskell.packages.ghc901.abc-puzzle                                                  abc-puzzle-0.2.1
-haskell.packages.ghc901.abcBridge                                                   abcBridge-0.15
+$ nix-env -f "<nixpkgs>" -qaP -A haskell.packages.ghc902
+haskell.packages.ghc902.a50                                                         a50-0.5
+haskell.packages.ghc902.AAI                                                         AAI-0.2.0.1
+haskell.packages.ghc902.abacate                                                     abacate-0.0.0.0
+haskell.packages.ghc902.abc-puzzle                                                  abc-puzzle-0.2.1
+haskell.packages.ghc902.abcBridge                                                   abcBridge-0.15
+…
 ```
 
-Every package set also re-exposes its GHC as `haskell.packages.*.ghc`.
+Every package set also re-exposes the GHC used to build its packages as `haskell.packages.*.ghc`.
 
 ## `haskellPackages.mkDerivation` {#haskell-mkderivation}
 

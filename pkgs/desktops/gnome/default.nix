@@ -94,9 +94,6 @@ lib.makeScope pkgs.newScope (self: with self; {
 
   mutter = callPackage ./core/mutter { };
 
-  # Needed for elementary's gala and greeter until support for higher versions is provided
-  mutter338 = callPackage ./core/mutter/3.38 { };
-
   nautilus = callPackage ./core/nautilus { };
 
   networkmanager-openvpn = pkgs.networkmanager-openvpn.override {
@@ -385,9 +382,8 @@ lib.makeScope pkgs.newScope (self: with self; {
 
   maintainers = throw "The ‘gnome.maintainers’ alias was removed on 2022-01-13. Please use ‘lib.teams.gnome.members’ directly."; # added 2020-04-01
 
-  mutter328 = throw "Removed as Pantheon is upgraded to mutter338.";
-
-  mutter334 = throw "Removed as Pantheon is upgraded to mutter338.";
+  mutter334 = throw "‘gnome.mutter334’ has been removed as Pantheon is upgraded to mutter 42.";
+  mutter338 = throw "‘gnome.mutter338’ has been removed as Pantheon is upgraded to mutter 42."; # added 2022-05-17
 
   gnome-getting-started-docs = throw "Removed in favour of gnome-tour.";
 }

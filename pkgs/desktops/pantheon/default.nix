@@ -40,10 +40,19 @@ lib.makeScope pkgs.newScope (self: with self; {
 
   maintainers = lib.teams.pantheon.members;
 
-  mutter = pkgs.gnome.mutter338;
+  # We stick on version 42 for mutter and GSD because this is the only
+  # version that is well-tested and supported by elementary OS 7.
+  # While things might build, misc issues may happen when settings were
+  # removed from GSD (shortcut-overlay#121), wrong binding regeneration
+  # (gala#1259), and some other breaking changes that I don't know
+  # (gala#1312, gala#1325, gala#1326).
+  #
+  # TODO(@bobby285271): Create gnome.{mutter,gnome-settings-daemon}42
+  # package and stick on that a few weeks before GNOME 43 is out.
 
-  # Using 3.38 to match Mutter used in Pantheon
-  gnome-settings-daemon = pkgs.gnome.gnome-settings-daemon338;
+  mutter = pkgs.gnome.mutter;
+
+  gnome-settings-daemon = pkgs.gnome.gnome-settings-daemon;
 
   elementary-gsettings-schemas = callPackage ./desktop/elementary-gsettings-schemas { };
 

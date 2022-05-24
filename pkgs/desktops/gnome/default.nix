@@ -384,5 +384,5 @@ lib.makeScope pkgs.newScope (self: with self; {
 
   gnome-settings-daemon338 = throw "‘gnome.gnome-settings-daemon338’ has been removed as Pantheon is upgraded to gnome-settings-daemon 42."; # added 2022-05-17
 
-  gnome-getting-started-docs = throw "Removed in favour of gnome-tour.";
+  gnome-getting-started-docs = throw "‘gnome.gnome-getting-started-docs’ has been removed in favour of gnome-tour.";
 }

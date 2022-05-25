@@ -1,7 +1,6 @@
 { lib
 , stdenv
 , fetchFromGitHub
-, fetchpatch
 , nix-update-script
 , pkg-config
 , meson
@@ -26,26 +25,19 @@
 
 stdenv.mkDerivation rec {
   pname = "gala";
-  version = "6.3.1";
+  version = "6.3.2";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = pname;
-    rev = version;
-    sha256 = "sha256-7RZt6gA3wyp1cxIWBYFK+fYFSZDbjHcwYa2snOmDw1Y=";
+    rev = "14cdefed9d7638fb608c5fc774d03f13efd6a63f";
+    sha256 = "sha256-P8GdQYt3JSmu3oOtI0b1SjWp5vr675AeDIESL1+ahs0=";
   };
 
   patches = [
     # We look for plugins in `/run/current-system/sw/lib/` because
     # there are multiple plugin providers (e.g. gala and wingpanel).
     ./plugins-dir.patch
-
-    # WindowManager: save/restore easing on workspace switch
-    # https://github.com/elementary/gala/pull/1430
-    (fetchpatch {
-      url = "https://github.com/elementary/gala/commit/1f94db16c627f73af5dc69714611815e4691b5e8.patch";
-      sha256 = "sha256-PLNbAXyOG0TMn1y2QIBnL6BOQVqBA+DBgPOVJo4nDr8=";
-    })
   ];
 
   nativeBuildInputs = [

@@ -27,8 +27,8 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "elementary";
     repo = pname;
-    rev = version;
-    sha256 = "sha256-WvkQx+9YjKCINpyVg8KjCV0GAb0rJfblSFaO14/4oas=";
+    rev = "a3c67cfbd4d94f52118f52cbf4dc18802561f85b";
+    sha256 = "sha256-oP4ZL8whfVFX29QA+s2G9uSWW9Ekrb1WrB0Uy5gGAZ8=";
   };
 
   patches = [

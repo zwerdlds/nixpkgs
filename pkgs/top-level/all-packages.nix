@@ -8366,7 +8366,9 @@ with pkgs;
 
   mkclean = callPackage ../applications/video/mkclean {};
 
-  mkcue = callPackage ../tools/cd-dvd/mkcue { };
+  mkcue = callPackage ../tools/cd-dvd/mkcue {
+    stdenv = if stdenv.cc.isGNU then gcc10Stdenv else stdenv;
+  };
 
   mkp224o = callPackage ../tools/security/mkp224o { };
 

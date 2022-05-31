@@ -3,7 +3,7 @@
 
 buildPythonApplication rec {
   pname = "PySolFC";
-  version = "2.6.4";
+  version = "2.16.0";
 
   src = fetchzip {
     url = "https://versaweb.dl.sourceforge.net/project/pysolfc/PySolFC/PySolFC-${version}/PySolFC-${version}.tar.xz";

@@ -3,16 +3,16 @@
 
 buildPythonApplication rec {
   pname = "PySolFC";
-  version = "2.6.4";
+  version = "2.16.0";
 
   src = fetchzip {
     url = "https://versaweb.dl.sourceforge.net/project/pysolfc/PySolFC/PySolFC-${version}/PySolFC-${version}.tar.xz";
-    sha256 = "1bd84law5b1yga3pryggdvlfvm0l62gci2q8y3q79cysdk3z4w3z";
+    sha256 = "1xdidzx3z820blxajqky2x98lm5gxxp0zrbzcjaxf92s093wp242";
   };
 
   cardsets = fetchzip {
-    url = "https://versaweb.dl.sourceforge.net/project/pysolfc/PySolFC-Cardsets/PySolFC-Cardsets-2.0/PySolFC-Cardsets-2.0.tar.bz2";
-    sha256 = "0h0fibjv47j8lkc1bwnlbbvrx2nr3l2hzv717kcgagwhc7v2mrqh";
+    url = "https://versaweb.dl.sourceforge.net/project/pysolfc/PySolFC-Cardsets/PySolFC-Cardsets-2.1/PySolFC-Cardsets-2.1.tar.bz2";
+    sha256 = "0x1p8v9xxbjd9rr1b671ad1jngkxan1njszqyi7vh51biv91kj0g";
   };
 
   propagatedBuildInputs = with python3Packages; [

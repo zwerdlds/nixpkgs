@@ -7,7 +7,7 @@ buildPythonApplication rec {
 
   src = fetchzip {
     url = "https://versaweb.dl.sourceforge.net/project/pysolfc/PySolFC/PySolFC-${version}/PySolFC-${version}.tar.xz";
-    sha256 = "0kbc8xjhqm9wc8ri7qbpxzx2wji91fjrsj4pd2d5c97kis6vlf6j";
+    sha256 = "13y6v7cimykkw2ak0cmbqk0s12mny53dd7n7m0qjf3iblbbl2jcj";
   };
 
   cardsets = fetchzip {

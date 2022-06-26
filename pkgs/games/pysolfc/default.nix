@@ -12,7 +12,7 @@ buildPythonApplication rec {
 
   cardsets = fetchzip {
     url = "https://versaweb.dl.sourceforge.net/project/pysolfc/PySolFC-Cardsets/PySolFC-Cardsets-2.1/PySolFC-Cardsets-2.1.tar.bz2";
-    sha256 = "0fc819d28e2b14b84ff4f86b6983557d3e2b4353e19815724e4daeded3463774";
+    sha256 = "0kbc8xjhqm9wc8ri7qbpxzx2wji91fjrsj4pd2d5c97kis6vlf6j";
   };
 
   propagatedBuildInputs = with python3Packages; [

@@ -14,9 +14,9 @@ buildPythonApplication rec {
   };
 
   propagatedBuildInputs = with python3Packages; [
-    tkinter six random2
+    tkinter six random2 configobj 
     # optional :
-    pygame freecell-solver pillow
+    pygame freecell-solver pillow 
   ];
 
   patches = [
